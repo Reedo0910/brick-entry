@@ -127,7 +127,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #222;
+    background-color: #444;
     overflow: hidden;
     cursor: pointer;
     border: none;
@@ -149,7 +149,7 @@
       line-height: 20px;
       text-align: center;
     }
-    &:hover {
+    &:active {
       transition: 0.5s cubic-bezier(0.58, 3, 0.5, 0.5);
       transition: 0.5s ease;
       background-color: #666;

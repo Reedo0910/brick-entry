@@ -1,11 +1,6 @@
 <template>
   <div class="key-panel" :class="panelName" v-show="!value || activePanel === panelName">
-    <label
-      :for="panelName"
-      class="center-key"
-      :data-keyname="panelName"
-      @click="SetPanel"
-    ></label>
+    <label :for="panelName" class="center-key" :data-keyname="panelName" @click="SetPanel"></label>
     <div class="cssplay-menu">
       <div>
         <input
@@ -66,11 +61,11 @@
         bus.$emit('setInput', key);
         this.$emit('setactive', false);
       }
-    //   getFirstLetter: function (keys) {
-    //     const copy = keys.concat();
-    //     const tarArr = copy.sort();
-    //     return tarArr[0];
-    //   }
+      //   getFirstLetter: function (keys) {
+      //     const copy = keys.concat();
+      //     const tarArr = copy.sort();
+      //     return tarArr[0];
+      //   }
     }
   }
 </script>
@@ -150,7 +145,7 @@
     overflow: hidden;
     transform: scale(0);
     /* transition: 0.5s cubic-bezier(.58, 2.4, 0.5, 0.5);
-                                                                                    transition: 0.5s ease; */
+                                                                                        transition: 0.5s ease; */
   }
 
   .cssplay-menu .segment button {
@@ -166,7 +161,7 @@
     cursor: pointer;
     transform-origin: left top;
     /* transition: 0.25s cubic-bezier(0, 0, 1, 1);
-                                                                                    transition: 0.25s ease; */
+                                                                                        transition: 0.25s ease; */
   }
 
   //   .cssplay-menu .segment label .ph {
@@ -202,21 +197,21 @@
     cursor: pointer;
   }
 
-//   .center-key::after {
-//     content: attr(data-keyname);
-//     color: #fff;
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     bottom: 0;
-//     font-size: 20px;
-//     width: 24px;
-//     height: 24px;
-//     margin: auto;
-//     line-height: 20px;
-//     text-align: center;
-//   }
+  //   .center-key::after {
+  //     content: attr(data-keyname);
+  //     color: #fff;
+  //     position: absolute;
+  //     left: 0;
+  //     right: 0;
+  //     top: 0;
+  //     bottom: 0;
+  //     font-size: 20px;
+  //     width: 24px;
+  //     height: 24px;
+  //     margin: auto;
+  //     line-height: 20px;
+  //     text-align: center;
+  //   }
 
   .cssplay-menu .key-input:checked + .holder {
     display: block;
@@ -224,17 +219,17 @@
 
   .cssplay-menu .key-input:checked + .holder .segment {
     /* transition: 0.5s cubic-bezier(.58, 3, 0.5, 0.5);
-                                                                                    transition: 0.5s ease; */
+                                                                                        transition: 0.5s ease; */
     transform: scale(1);
   }
 
-  .center-key:hover {
+  .center-key:active {
     transition: 0.5s cubic-bezier(0.58, 3, 0.5, 0.5);
     transition: 0.5s ease;
     background-color: #666;
   }
 
-  .segment button:hover {
+  .segment button:active {
     background-color: #888;
   }
 </style>
