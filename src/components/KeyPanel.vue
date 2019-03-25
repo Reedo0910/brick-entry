@@ -1,6 +1,6 @@
 <template>
   <div class="key-panel" :class="panelName" v-show="!value || activePanel === panelName">
-    <label :for="panelName" class="center-key" :data-keyname="panelKeys[0]" @click="SetPanel"></label>
+    <label :for="panelName" class="center-key" :data-keyname="getFirstLetter(panelKeys)" @click="SetPanel"></label>
     <div class="cssplay-menu">
       <div>
         <input
@@ -60,6 +60,10 @@
       InputChar: function (key) {
         bus.$emit('setInput', key);
         this.$emit('setactive', false);
+      },
+      getFirstLetter: function (keys) {
+        const tarArr = keys.sort();
+        return tarArr[0];
       }
     }
   }
@@ -140,7 +144,7 @@
     overflow: hidden;
     transform: scale(0);
     /* transition: 0.5s cubic-bezier(.58, 2.4, 0.5, 0.5);
-                                                                              transition: 0.5s ease; */
+                                                                                transition: 0.5s ease; */
   }
 
   .cssplay-menu .segment button {
@@ -156,7 +160,7 @@
     cursor: pointer;
     transform-origin: left top;
     /* transition: 0.25s cubic-bezier(0, 0, 1, 1);
-                                                                              transition: 0.25s ease; */
+                                                                                transition: 0.25s ease; */
   }
 
   //   .cssplay-menu .segment label .ph {
@@ -211,7 +215,7 @@
 
   .cssplay-menu .key-input:checked + .holder .segment {
     /* transition: 0.5s cubic-bezier(.58, 3, 0.5, 0.5);
-                                                                              transition: 0.5s ease; */
+                                                                                transition: 0.5s ease; */
     transform: scale(1);
   }
 
