@@ -4,15 +4,15 @@
     <key-panel panel-name="def" :panel-keys="['d','e','f']" v-model="isPanelActive"></key-panel>
     <key-panel panel-name="ghi" :panel-keys="['g','h','i']" v-model="isPanelActive"></key-panel>
     <key-panel panel-name="jkl" :panel-keys="['j','k','l']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="mno" :panel-keys="['m','n','o']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="pqrs" :panel-keys="['p','q','r','s']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="tuv" :panel-keys="['t','u','v']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="wxyz" :panel-keys="['w','x','y','z']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="mark" :panel-keys="[',','.','!','?']" v-model="isPanelActive"></key-panel>
-    <key-panel panel-name="num" :panel-keys="['1','2','3','4']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="mno" :panel-keys="['o','n','m']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="pqrs" :panel-keys="['s','r','q','p']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="tuv" :panel-keys="['v','u','t']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="wxyz" :panel-keys="['z','y','x','w']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="mark" :panel-keys="['?','!','.',',']" v-model="isPanelActive"></key-panel>
+    <key-panel panel-name="num" :panel-keys="['4','3','2','1']" v-model="isPanelActive"></key-panel>
     <button class="delete-center-key" data-keyname="⇤" v-show="!isPanelActive" @click="deleteChar"></button>
     <div class="dial-display" @click="inputSpace">{{ dialDisplay }}_</div>
-    
+    <key-map :activeState="isPanelActive"></key-map>
   </div>
 </template>
 
@@ -24,7 +24,8 @@
 
   export default {
     components: {
-      KeyPanel
+      KeyPanel,
+      KeyMap
     },
     data() {
       return {
