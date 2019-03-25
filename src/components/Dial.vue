@@ -73,14 +73,14 @@
 
 <style lang="scss" scoped>
   @keyframes twinkling {
-    0% {
-      opacity: 0;
+    from {
+      visibility: hidden;
     }
     50% {
-      opacity: 1;
+      visibility: hidden;
     }
-    100% {
-      opacity: 0;
+    to {
+      visibility: visible;
     }
   }
 
