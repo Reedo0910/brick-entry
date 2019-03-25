@@ -11,7 +11,10 @@
     <key-panel panel-name="mark" :panel-keys="['?','!','.',',']" v-model="isPanelActive"></key-panel>
     <key-panel panel-name="num" :panel-keys="['4','3','2','1']" v-model="isPanelActive"></key-panel>
     <button class="delete-center-key" data-keyname="⇤" v-show="!isPanelActive" @click="deleteChar"></button>
-    <div class="dial-display" @click="inputSpace" id="display" ref="display">{{ dialDisplay }}_</div>
+    <div class="dial-display" @click="inputSpace" id="display" ref="display">
+      <span>{{ dialDisplay }}</span>
+      <span class="cursor">_</span>
+    </div>
     <key-map :activeState="isPanelActive"></key-map>
   </div>
 </template>
@@ -69,6 +72,18 @@
 </script>
 
 <style lang="scss" scoped>
+  @keyframes twinkling {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   * {
     user-select: none;
     outline: none;
@@ -141,11 +156,8 @@
     }
   }
 
-  //   .cur {
-  //     display: inline-block;
-  //     width: 1px;
-  //     height: 12px;
-  //     background-color: #fff;
-  //   }
+  .cursor {
+    animation: twinkling 1s infinite ease;
+  }
 </style>
 
