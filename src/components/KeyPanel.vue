@@ -3,7 +3,7 @@
     <label
       :for="panelName"
       class="center-key"
-      :data-keyname="getFirstLetter(panelKeys)"
+      :data-keyname="panelName"
       @click="SetPanel"
     ></label>
     <div class="cssplay-menu">
@@ -65,12 +65,12 @@
       InputChar: function (key) {
         bus.$emit('setInput', key);
         this.$emit('setactive', false);
-      },
-      getFirstLetter: function (keys) {
-        const copy = keys.concat();
-        const tarArr = copy.sort();
-        return tarArr[0];
       }
+    //   getFirstLetter: function (keys) {
+    //     const copy = keys.concat();
+    //     const tarArr = copy.sort();
+    //     return tarArr[0];
+    //   }
     }
   }
 </script>
@@ -150,7 +150,7 @@
     overflow: hidden;
     transform: scale(0);
     /* transition: 0.5s cubic-bezier(.58, 2.4, 0.5, 0.5);
-                                                                                  transition: 0.5s ease; */
+                                                                                    transition: 0.5s ease; */
   }
 
   .cssplay-menu .segment button {
@@ -166,7 +166,7 @@
     cursor: pointer;
     transform-origin: left top;
     /* transition: 0.25s cubic-bezier(0, 0, 1, 1);
-                                                                                  transition: 0.25s ease; */
+                                                                                    transition: 0.25s ease; */
   }
 
   //   .cssplay-menu .segment label .ph {
@@ -195,25 +195,28 @@
     height: 20%;
     border-radius: 50%;
     background-color: #222;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
     cursor: pointer;
   }
 
-  .center-key::after {
-    content: attr(data-keyname);
-    color: #fff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    font-size: 20px;
-    width: 24px;
-    height: 24px;
-    margin: auto;
-    line-height: 20px;
-    text-align: center;
-  }
+//   .center-key::after {
+//     content: attr(data-keyname);
+//     color: #fff;
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     font-size: 20px;
+//     width: 24px;
+//     height: 24px;
+//     margin: auto;
+//     line-height: 20px;
+//     text-align: center;
+//   }
 
   .cssplay-menu .key-input:checked + .holder {
     display: block;
@@ -221,7 +224,7 @@
 
   .cssplay-menu .key-input:checked + .holder .segment {
     /* transition: 0.5s cubic-bezier(.58, 3, 0.5, 0.5);
-                                                                                  transition: 0.5s ease; */
+                                                                                    transition: 0.5s ease; */
     transform: scale(1);
   }
 

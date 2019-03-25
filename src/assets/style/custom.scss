@@ -42,50 +42,90 @@ $skew2: skewY(40deg);
     &.abc {
         @include key-position(-45px, -70px);
         @include button-list(-165deg);
+
+        & .center-key {
+            background-image: url('./../images/abc.png');
+        }
     }
 
     &.def {
         @include key-position(-73px, -40px);
         @include button-list(-135deg);
+
+        & .center-key {
+            background-image: url('./../images/def.png');
+        }
     }
 
     &.ghi {
         @include key-position(-80px, 0px);
         @include button-list(-100deg);
+
+        & .center-key {
+            background-image: url('./../images/ghi.png');
+        }
     }
 
     &.jkl {
         @include key-position(-67px, 37px);
         @include button-list(-75deg);
+
+        & .center-key {
+            background-image: url('./../images/jkl.png');
+        }
     }
 
     &.mno {
         @include key-position(-34px, 60px);
         @include button-list(-45deg);
+
+        & .center-key {
+            background-image: url('./../images/mno.png');
+        }
     }
 
     &.pqrs {
         @include key-position(5px, 66px);
         @include button-list2(-30deg);
+
+        & .center-key {
+            background-image: url('./../images/pqrs.png');
+        }
     }
 
     &.tuv {
         @include key-position(41px, 46px);
         @include button-list(20deg);
+
+        & .center-key {
+            background-image: url('./../images/tuv.png');
+        }
     }
 
     &.wxyz {
         @include key-position(62px, 11px);
         @include button-list2(30deg);
+
+        & .center-key {
+            background-image: url('./../images/wxyz.png');
+        }
     }
 
     &.mark {
         @include key-position(62px, -28px);
         @include button-list2(65deg);
+
+        & .center-key {
+            background-image: url('./../images/mark.png');
+        }
     }
 
     &.num {
         @include key-position(43px, -62px);
         @include button-list2(100deg);
+
+        & .center-key {
+            background-image: url('./../images/num.png');
+        }
     }
 }
