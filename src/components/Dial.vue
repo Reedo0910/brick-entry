@@ -11,7 +11,7 @@
     <key-panel panel-name="mark" :panel-keys="['?','!','.',',']" v-model="isPanelActive"></key-panel>
     <key-panel panel-name="num" :panel-keys="['4','3','2','1']" v-model="isPanelActive"></key-panel>
     <button class="delete-center-key" data-keyname="⇤" v-show="!isPanelActive" @click="deleteChar"></button>
-    <div class="dial-display" @click="inputSpace">{{ dialDisplay }}_</div>
+    <div class="dial-display" @click="inputSpace" id="display" ref="display">{{ dialDisplay }}_</div>
     <key-map :activeState="isPanelActive"></key-map>
   </div>
 </template>
@@ -34,18 +34,20 @@
         dialDisplay: ''
       }
     },
-    created() {
+    mounted() {
       const vm = this;
       bus.$on('setActivePanel', (panel) => {
         vm.activePanel = panel;
       });
       bus.$on('setInput', (key) => {
         vm.dialDisplay += key;
+        vm.scrollToBottom();
       });
     },
     methods: {
       deleteChar: function () {
         this.dialDisplay = this.dialDisplay.substring(0, this.dialDisplay.length - 1);
+        this.scrollToBottom();
       },
       inputSpace: function () {
         if (this.dialDisplay.length === 0) {
@@ -53,7 +55,14 @@
         }
         if (this.dialDisplay.trim().length === this.dialDisplay.length) {
           this.dialDisplay += ' ';
+          this.scrollToBottom();
         }
+      },
+      scrollToBottom: function () {
+        const tar = this.$refs.display;
+        this.$nextTick(() => {
+          return tar.scrollTop = tar.scrollHeight;
+        })
       }
     }
   }
