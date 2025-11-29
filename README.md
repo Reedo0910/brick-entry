@@ -1,6 +1,10 @@
-# BrickEntry2
+# BrickEntry
 
-## Project setup
+> A text entry interaction prototype for smartwatches.
+
+## Dev
+
+### Project setup
 ```
 npm install
 ```

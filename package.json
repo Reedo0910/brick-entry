@@ -1,11 +1,14 @@
 {
   "name": "brick-entry",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://github.com/Reedo0910/brick-entry",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^2.6.6"
@@ -17,9 +20,13 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "gh-pages": "^6.3.0",
+    "sass": "^1.77.0",
+    "sass-loader": "^10.0.0",
+    "vue-template-compiler": "^2.6.6"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
   },
   "eslintConfig": {
     "root": true,
@@ -41,9 +48,6 @@
     }
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "Chrome > 18",
-    "not ie <= 8"
+    "defaults"
   ]
 }
