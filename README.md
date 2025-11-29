@@ -26,9 +26,6 @@ npm run serve
 
 # build for production
 npm run build
-
-# lint source files
-npm run lint
 ```
 
 ## Credits
