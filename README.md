@@ -1,33 +1,38 @@
 # BrickEntry
 
-> A text entry interaction prototype for smartwatches.
+BrickEntry is a text entry interaction prototype designed for circular smartwatches.
 
-## Dev
 
-### Project setup
-```
+
+## Live demo
+
+To use the prototype on a smartwatch:
+
+1. Open the web browser on your smartwatch.
+2. Navigate to: https://reedo0910.github.io/brick-entry/
+3. Tap the on screen buttons to enter characters.
+4. Tap the center of the watch face area to insert a space character.
+
+## Development
+
+This project is built with Vue 2 and Vue CLI.
+
+```bash
+# install dependencies
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+# start a dev server with hot reload
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+# build for production
 npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
+# lint source files
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Credits
+
+BrickEntry was developed and designed by Zeee.
+
+Additional design, icon design, and study related contributions by Joe Hoeltke and Xianyou Yang.
