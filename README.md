@@ -2,7 +2,7 @@
 
 BrickEntry is a text entry interaction prototype designed for circular smartwatches.
 
-
+![screenshot](https://raw.githubusercontent.com/Reedo0910/brick-entry/refs/heads/master/docs/screenshot.png)
 
 ## Live demo
 
@@ -35,4 +35,4 @@ npm run lint
 
 BrickEntry was developed and designed by Zeee.
 
-Additional design, icon design, and study related contributions by Joe Hoeltke and Xianyou Yang.
+Additional icon design and study related contributions by Joe Hoeltke and Xianyou Yang.
